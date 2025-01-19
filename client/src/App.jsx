@@ -1,22 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Flyttebilberegner from './pages/Flyttebilberegner';
-import Tjekliste from './pages/Tjekliste';
-import Visualisering from './pages/Visualisering';
-import Flytteguide from './pages/Flytteguide';
-import OmOs from './pages/OmOs';
+import Navbar from './components/Navbar'; // Navbar-komponent
+import Home from './pages/Home'; // Forsiden
+import Flyttebilberegner from './pages/Flyttebilberegner'; // Flyttebilberegner-siden
+import Tjekliste from './pages/Tjekliste'; // Tjekliste-siden
+import Visualisering from './pages/Visualisering'; // 3D-Visualisering-siden
+import OmOs from './pages/OmOs'; // Om Os-siden
 
 const App = () => (
   <Router>
-    <Navbar />
+    <Navbar /> {/* Navigation vises på alle sider */}
     <Routes>
+      {/* Definer ruter for hver side */}
       <Route path="/" element={<Home />} />
       <Route path="/flyttebilberegner" element={<Flyttebilberegner />} />
       <Route path="/tjekliste" element={<Tjekliste />} />
       <Route path="/3d-visualisering" element={<Visualisering />} />
-      <Route path="/flytteguide" element={<Flytteguide />} />
       <Route path="/om-os" element={<OmOs />} />
     </Routes>
   </Router>

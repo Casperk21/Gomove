@@ -1,1 +1,17 @@
+/* Styling for 3D-Visualisering-siden */
+.visualisering-container {
+  padding: 2rem;
+}
+
+.visualisering-canvas {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 500px;
+}
+
+.visualisering-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
 

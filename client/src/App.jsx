@@ -1,3 +1,4 @@
+import Tjekliste from './Tjekliste'; // Import af Tjekliste-komponenten
 import KontaktOs from './pages/KontaktOs';
 
 <Routes>

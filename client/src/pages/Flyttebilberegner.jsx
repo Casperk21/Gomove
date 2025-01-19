@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/flyttebilberegner.css'; // Importér CSS til beregneren
+import '../styles/flyttebilberegner.css'; // Importér CSS
 
 const Flyttebilberegner = () => {
   const [items, setItems] = useState([]);
@@ -8,12 +8,16 @@ const Flyttebilberegner = () => {
 
   const addItem = (e) => {
     e.preventDefault();
-    if (name && dimensions) {
-      setItems([...items, { name, dimensions }]);
+    const [length, width, height] = dimensions.split('x').map(Number);
+    if (name && length && width && height) {
+      const volume = length * width * height;
+      setItems([...items, { name, dimensions, volume }]);
       setName('');
       setDimensions('');
     }
   };
+
+  const totalVolume = items.reduce((sum, item) => sum + item.volume, 0);
 
   return (
     <div className="flyttebilberegner-container">
@@ -31,7 +35,7 @@ const Flyttebilberegner = () => {
           type="text"
           value={dimensions}
           onChange={(e) => setDimensions(e.target.value)}
-          placeholder="Indtast dimensioner"
+          placeholder="Indtast dimensioner (fx 200x100x50)"
         />
         <button type="submit">Tilføj</button>
       </form>
@@ -40,13 +44,15 @@ const Flyttebilberegner = () => {
         <ul>
           {items.map((item, index) => (
             <li key={index}>
-              {item.name} - {item.dimensions}
+              {item.name} - {item.dimensions} (Volumen: {item.volume} m³)
             </li>
           ))}
         </ul>
+        <h3>Total volumen: {totalVolume} m³</h3>
       </div>
     </div>
   );
 };
 
 export default Flyttebilberegner;
+

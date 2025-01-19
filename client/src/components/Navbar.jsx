@@ -1,21 +1,18 @@
-import '../styles/navbar.css';
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/navbar.css'; // Importér CSS til navigationen
 
-const Navbar = () => {
-  return (
-    <nav className="bg-blue-600 p-4 text-white">
-      <div className="flex justify-between">
-        <Link to="/" className="text-2xl font-bold">Gomove</Link>
-        <div className="space-x-4">
-          <Link to="/flyttebilberegner">Flyttebilberegner</Link>
-          <Link to="/3d-visualisering">3D-Visualisering</Link>
-          <Link to="/tjekliste">Tjekliste</Link>
-          <Link to="/flytteguide">Flytteguide</Link>
-          <Link to="/om-os">Om os</Link>
-        </div>
-      </div>
-    </nav>
-  );
-};
+const Navbar = () => (
+  <nav>
+    <div>
+      <Link to="/">Hjem</Link>
+      <Link to="/flyttebilberegner">Flyttebilberegner</Link>
+      <Link to="/tjekliste">Tjekliste</Link>
+      <Link to="/3d-visualisering">3D-Visualisering</Link>
+      <Link to="/flytteguide">Flytteguide</Link>
+      <Link to="/om-os">Om os</Link>
+    </div>
+  </nav>
+);
 
 export default Navbar;

@@ -1,0 +1,16 @@
+/* Styling for Om Os-siden */
+.omos-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.omos-header {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.omos-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 1rem;
+}

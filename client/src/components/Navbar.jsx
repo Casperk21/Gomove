@@ -1,32 +1,33 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/navbar.css'; // Importér CSS
+import '../styles/navbar.css';
 
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
-    <nav>
-      <div className="nav-links">
+    <nav className="navbar">
+      <div className="navbar-logo">
+        {/* Logo */}
+        <Link to="/">
+          <span className="logo-icon">🚛</span> Gomove
+        </Link>
+      </div>
+      <button className="hamburger" onClick={toggleMenu}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+      <div className={`menu ${menuOpen ? 'open' : ''}`}>
         <Link to="/">Hjem</Link>
-        <Link to="/flyttebilberegner">Flyttebilberegner</Link>
+        <Link to="/flyttebilberegner">Flyttebilsberegner</Link>
         <Link to="/tjekliste">Tjekliste</Link>
-        <div className="dropdown">
-          <button className="dropdown-toggle" onClick={toggleDropdown}>
-            Mere
-          </button>
-          {dropdownOpen && (
-            <div className="dropdown-menu">
-              <Link to="/3d-visualisering">3D-Visualisering</Link>
-              <Link to="/flytteguide">Flytteguide</Link>
-              <Link to="/om-os">Om os</Link>
-            </div>
-          )}
-        </div>
+        <Link to="/kontakt-os">Kontakt os</Link>
+        <Link to="/om-os">Om os</Link>
       </div>
     </nav>
   );

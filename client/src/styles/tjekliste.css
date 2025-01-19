@@ -1,0 +1,45 @@
+/* Styling for Tjekliste-siden */
+.tjekliste-container {
+  padding: 2rem;
+}
+
+.tjekliste-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tjekliste-item input[type="checkbox"] {
+  margin-right: 1rem;
+}
+
+.tjekliste-item.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.tjekliste-form {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.tjekliste-form input {
+  flex: 1;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tjekliste-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tjekliste-form button:hover {
+  background-color: #0056b3;
+}

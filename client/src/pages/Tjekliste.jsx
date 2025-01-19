@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import '../styles/tjekliste.css'; // Importér CSS til tjeklisten
+import '../styles/tjekliste.css'; // Importér CSS
 
 const Tjekliste = () => {
   const [tasks, setTasks] = useState([
     { text: 'Pak bøger', completed: false },
-    { text: 'Rengør køkkenet', completed: true },
+    { text: 'Rengør køkkenet', completed: false },
   ]);
+  const [newTask, setNewTask] = useState('');
+
+  const addTask = (e) => {
+    e.preventDefault();
+    if (newTask.trim() !== '') {
+      setTasks([...tasks, { text: newTask, completed: false }]);
+      setNewTask('');
+    }
+  };
 
   const toggleTask = (index) => {
     const updatedTasks = tasks.map((task, i) =>
@@ -29,6 +38,15 @@ const Tjekliste = () => {
           </li>
         ))}
       </ul>
+      <form className="tjekliste-form" onSubmit={addTask}>
+        <input
+          type="text"
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          placeholder="Tilføj ny opgave"
+        />
+        <button type="submit">Tilføj</button>
+      </form>
     </div>
   );
 };

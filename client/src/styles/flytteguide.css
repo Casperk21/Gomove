@@ -1,0 +1,13 @@
+/* Styling for Flytteguide-siden */
+.flytteguide-container {
+  padding: 2rem;
+}
+
+.flytteguide-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.flytteguide-list li {
+  margin-bottom: 1rem;
+}

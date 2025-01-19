@@ -1,0 +1,19 @@
+/* Styling for navigation */
+nav {
+  background-color: #007bff; /* Blå baggrund */
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}

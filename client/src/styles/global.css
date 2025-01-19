@@ -1,28 +1,34 @@
-/* Global styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa; /* Lys grå baggrund */
-  color: #333; /* Standard tekstfarve */
+  background-color: #f8f9fa; /* Lys baggrund */
+  color: #333; /* Mørk tekst */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
-
-p {
-  margin: 0 0 1rem 0;
+h1, h2, h3, h4 {
+  color: #007bff; /* Primær blå farve */
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: #007bff;
 }
 
-/* Konfigurer en container til centrering */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }

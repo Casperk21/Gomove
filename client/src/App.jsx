@@ -1,15 +1,3 @@
-import React from 'react';
-import Tjekliste from './Tjekliste'; // Sørg for, at stien passer til din mappeopsætning
-
-function App() {
-  return (
-    <div>
-      <Tjekliste />
-    </div>
-  );
-}
-
-export default App;
 import KontaktOs from './pages/KontaktOs';
 
 <Routes>

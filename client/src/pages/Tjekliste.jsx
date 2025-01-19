@@ -1,15 +1,11 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+import '../styles/tjekliste.css'; // Importér CSS til tjeklisten
 
 const Tjekliste = () => {
-  const [tasks, setTasks] = useState([]);
-  const [input, setInput] = useState("");
-
-  const addTask = () => {
-    if (input) {
-      setTasks([...tasks, { text: input, completed: false }]);
-      setInput("");
-    }
-  };
+  const [tasks, setTasks] = useState([
+    { text: 'Pak bøger', completed: false },
+    { text: 'Rengør køkkenet', completed: true },
+  ]);
 
   const toggleTask = (index) => {
     const updatedTasks = tasks.map((task, i) =>
@@ -19,27 +15,16 @@ const Tjekliste = () => {
   };
 
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-4">Flytte Tjekliste</h1>
-      <div className="flex mb-4">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className="border p-2 flex-grow"
-          placeholder="Tilføj en ny opgave"
-        />
-        <button onClick={addTask} className="bg-green-600 text-white px-4 py-2 ml-2">
-          Tilføj
-        </button>
-      </div>
+    <div className="tjekliste-container">
+      <h1>Tjekliste</h1>
       <ul>
         {tasks.map((task, index) => (
           <li
             key={index}
+            className={`tjekliste-item ${task.completed ? 'completed' : ''}`}
             onClick={() => toggleTask(index)}
-            className={`cursor-pointer ${task.completed ? "line-through text-gray-500" : ""}`}
           >
+            <input type="checkbox" checked={task.completed} readOnly />
             {task.text}
           </li>
         ))}

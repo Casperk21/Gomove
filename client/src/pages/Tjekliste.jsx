@@ -21,7 +21,7 @@ const Tjekliste = () => {
   ]);
   const [newRoomName, setNewRoomName] = useState('');
 
-  // Load gemt tjekliste fra Local Storage
+  // Indlæs gemt tjekliste fra Local Storage
   useEffect(() => {
     const savedChecklist = localStorage.getItem('checklist');
     if (savedChecklist) {
@@ -29,13 +29,13 @@ const Tjekliste = () => {
     }
   }, []);
 
-  // Gem tjekliste til Local Storage
+  // Gem tjeklisten til Local Storage
   const saveChecklist = () => {
     localStorage.setItem('checklist', JSON.stringify(rooms));
     alert('Tjeklisten er gemt!');
   };
 
-  // Ryd tjeklisten
+  // Ryd hele tjeklisten
   const clearChecklist = () => {
     setRooms([]);
     localStorage.removeItem('checklist');
@@ -50,7 +50,7 @@ const Tjekliste = () => {
     }
   };
 
-  // Opdater tjekstatus for en opgave
+  // Opdater en tjekstatus for et item
   const toggleItem = (roomIndex, itemIndex) => {
     const updatedRooms = [...rooms];
     updatedRooms[roomIndex].items[itemIndex].checked =

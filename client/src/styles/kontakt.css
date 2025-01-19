@@ -1,0 +1,53 @@
+.kontakt-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kontakt-container h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.kontakt-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.kontakt-form input,
+.kontakt-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.kontakt-form button {
+  margin-top: 1.5rem;
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.kontakt-form button:hover {
+  background-color: #0056b3;
+}
+
+.kontakt-info {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.kontakt-info p {
+  margin: 0.5rem 0;
+}
